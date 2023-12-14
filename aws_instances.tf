@@ -4,8 +4,8 @@ data "aws_iam_role" "ecs_task_execution_role" {
 resource "aws_ecs_task_definition" "ecs_task_definition" {
   family                   = "back-end-task-definition-family"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = 256
-  memory                   = 512
+  cpu                      = 512
+  memory                   = 1024
   execution_role_arn       = data.aws_iam_role.ecs_task_execution_role.arn
   network_mode             = "awsvpc"
   container_definitions = jsonencode(
