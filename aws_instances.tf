@@ -21,7 +21,7 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
           }
         ],
         environment = [
-          { "name" : "db_url", "value" : "jdbc:mysql://${aws_db_instance.rds_instance.endpoint}/lab_database" },
+          { "name" : "db_url", "value" : "jdbc:mysql://${aws_db_instance.rds_instance.endpoint}/terraform_db" },
           { "name" : "db_username", "value" : "${var.db_username}" },
           { "name" : "db_password", "value" : "${var.db_password}" }
         ]
